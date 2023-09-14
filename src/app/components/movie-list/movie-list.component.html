@@ -1,1 +1,12 @@
-<p>movie-list works!</p>
+<div class="container">
+  <div class="desc">
+    <h2>All Movies</h2>
+  </div>
+  <div class="movie-list-container">
+    <div class="movie-list">
+      <div class="movie-box" *ngFor="let movie of movies">
+        <app-movie-box></app-movie-box>
+      </div>
+    </div>
+  </div>
+</div>

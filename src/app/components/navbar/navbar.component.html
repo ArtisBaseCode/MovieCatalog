@@ -1,4 +1,17 @@
 <div class="container">
-  <p>navbar works!</p>
-  <app-search-bar></app-search-bar>
+  <div class="left-menu">
+    <h2><a routerLink="../home"></a>BaseCode</h2>
+  </div>
+  <div class="right-menu">
+    <div class="right-menu-item">
+      <app-search-bar></app-search-bar>
+    </div>
+    <div class="right-menu-item">
+      <app-dropdown title="Categories"></app-dropdown>
+    </div>
+    <div class="right-menu-item">
+      <button (click)="onLogIn()">Log In</button>
+    </div>
+  </div>
 </div>
+<router-outlet></router-outlet>

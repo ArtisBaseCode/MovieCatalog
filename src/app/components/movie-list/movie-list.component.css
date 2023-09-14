@@ -1,0 +1,28 @@
+.container {
+  box-sizing: border-box;
+  display: block;
+}
+.movie-list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.desc {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  width: 100%;
+}
+.movie-list {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  /* overflow: hidden; */
+}
+.movie-box {
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  /* flex: 33%; */
+  margin: 10px;
+}

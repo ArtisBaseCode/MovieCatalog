@@ -1,0 +1,32 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: rgba(221, 221, 221, 0.7);
+}
+.dropbtn {
+  background-color: #5425be;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+}
+.dropdown-content button:hover {
+  background-color: rgba(221, 221, 221, 1);
+}
+.dropdown-content-item {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(221, 221, 221, 0.1);
+  border: 0;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+}

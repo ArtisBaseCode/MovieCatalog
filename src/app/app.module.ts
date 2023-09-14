@@ -8,6 +8,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MovieBoxComponent } from './components/movie-box/movie-box.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MovieBoxComponent } from './components/movie-box/movie-box.component';
     NavbarComponent,
     SearchBarComponent,
     MovieListComponent,
-    MovieBoxComponent
+    MovieBoxComponent,
+    LandingPageComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

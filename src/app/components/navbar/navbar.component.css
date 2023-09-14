@@ -1,4 +1,33 @@
 .container {
   justify-content: space-between;
   display: flex;
+  background-color: #5425be;
+  height: 75px;
+  align-items: center;
+}
+
+.right-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-menu-item {
+  margin-right: 15px;
+  color: white;
+  cursor: pointer;
+}
+.right-menu-item button {
+  background-color: #5425be;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+.left-menu {
+  margin-left: 15px;
+}
+.left-menu h2 {
+  color: #ffff;
+  cursor: pointer;
 }

@@ -1,0 +1,9 @@
+<div class="dropdown">
+  <button class="dropbtn" (click)="onToggle()">{{ title }}</button>
+  <div *ngIf="toggle" class="dropdown-content">
+    <button class="dropdown-content-item">Action</button>
+    <button class="dropdown-content-item">Comedy</button>
+    <button class="dropdown-content-item">Adventure</button>
+    <button class="dropdown-content-item">Sci-fi</button>
+  </div>
+</div>
