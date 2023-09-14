@@ -1,0 +1,67 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "image": "#",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    },
+    {
+      "id": 1,
+      "image": "",
+      "title": "",
+      "categories": [""],
+      "description": ""
+    }
+  ]
+}

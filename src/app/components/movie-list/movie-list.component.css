@@ -1,3 +1,6 @@
+body {
+  overflow: hidden;
+}
 .container {
   box-sizing: border-box;
   display: block;
@@ -10,7 +13,8 @@
 .desc {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  color: #fff;
+  margin: 30px 0;
   width: 100%;
 }
 .movie-list {

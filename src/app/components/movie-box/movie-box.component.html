@@ -6,6 +6,13 @@
       class="movie-image"
     />
   </div>
-  <h3 class="movie-title">Movie Title Here</h3>
-  <p class="movie-category">Categories here</p>
+  <h3 class="movie-title">{{ title }}</h3>
+
+  <div class="category-container">
+    <div class="category-inner-container">
+      <p *ngFor="let category of categories" class="movie-category">
+        {{ category }}
+      </p>
+    </div>
+  </div>
 </div>
