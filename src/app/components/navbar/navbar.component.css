@@ -1,7 +1,7 @@
 .container {
   justify-content: space-between;
   display: flex;
-  background-color: #0f192d;
+  background-color: #cec8b3;
   height: 75px;
   align-items: center;
 }
@@ -13,15 +13,15 @@
 }
 
 .right-menu-item {
-  background-color: #0f192d;
+  background-color: #cec8b3;
   margin-right: 15px;
-  color: white;
+  color: #152537;
   cursor: pointer;
 }
 .right-menu-item button {
-  background-color: #0f192d;
+  background-color: #cec8b3;
   border: 0;
-  color: #a48ed9;
+  color: #152537;
   cursor: pointer;
   font-size: 16px;
 }
@@ -29,6 +29,6 @@
   margin-left: 15px;
 }
 .left-menu h2 {
-  color: #a48ed9;
+  color: #152537;
   cursor: pointer;
 }

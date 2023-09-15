@@ -4,6 +4,8 @@
   height: 350px;
   align-items: center;
   justify-content: center;
+  color: #152537;
+  background-color: #cec8b3;
 }
 .img-container {
   display: flex;
@@ -16,14 +18,14 @@
 }
 .movie-title {
   font-size: 18px;
-  color: #fff;
+  color: #152537;
   font-weight: 500;
   width: 100%;
   text-align: center;
 }
 .movie-category {
   /* width: 70%; */
-  color: #d7d7d7;
+  color: #152537;
   font-weight: 100;
   font-size: 12px;
   text-align: center;

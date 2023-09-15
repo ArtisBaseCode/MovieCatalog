@@ -9,9 +9,9 @@
   background-color: rgba(221, 221, 221, 0.7);
 }
 .dropbtn {
-  background-color: #0f192d;
+  background-color: #cec8b3;
   border: 0;
-  color: #a48ed9;
+  color: #152537;
   font-size: 16px;
   cursor: pointer;
   display: block;
@@ -25,7 +25,7 @@
   text-align: center;
   background-color: rgba(221, 221, 221, 0.1);
   border: 0;
-  color: black;
+  color: #152537;
   font-size: 16px;
   cursor: pointer;
   display: block;

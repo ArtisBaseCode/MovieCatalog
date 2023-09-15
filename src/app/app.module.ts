@@ -10,6 +10,9 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
 import { MovieBoxComponent } from './components/movie-box/movie-box.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     MovieListComponent,
     MovieBoxComponent,
     LandingPageComponent,
-    DropdownComponent
+    DropdownComponent,
+    LoginComponent,
+    RegisterComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,
