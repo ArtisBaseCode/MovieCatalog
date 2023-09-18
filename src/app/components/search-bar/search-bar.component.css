@@ -4,3 +4,17 @@
   font-size: 16px;
   /* font-weight:; */
 }
+input:focus {
+  border: none;
+  border-bottom: 0.5px solid #333;
+  outline: none;
+}
+.search-bar {
+  border-radius: 3px;
+  border: 0;
+  border-bottom: 0.5px solid #333;
+}
+.search-bar :focus {
+  outline: none;
+  border: none;
+}
