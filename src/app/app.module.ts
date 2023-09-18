@@ -13,6 +13,8 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { MovieComponent } from './pages/movie/movie.component';
+import { AdminPannelComponent } from './pages/admin-pannel/admin-pannel.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,11 @@ import { MovieComponent } from './pages/movie/movie.component';
     DropdownComponent,
     LoginComponent,
     RegisterComponent,
-    MovieComponent
+    MovieComponent,
+    AdminPannelComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

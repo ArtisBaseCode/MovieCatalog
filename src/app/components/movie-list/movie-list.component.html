@@ -2,15 +2,19 @@
   <div class="desc">
     <h2>All Movies</h2>
   </div>
+  <!-- <h1>Leonamaemira</h1> -->
   <div class="movie-list-container">
     <div class="movie-list">
       <div class="movie-box" *ngFor="let movie of movies">
         <app-movie-box
-          [categories]="movie.categories"
-          [title]="movie.title"
-          [imgUrl]="movie.image"
+          [categories]="movie.titleCategory"
+          [title]="movie.titleText"
+          [imgUrl]="movie.primaryImage"
         ></app-movie-box>
       </div>
+      <!-- <div class="movie-box" *ngFor="let title of titles">
+        <h2>{{ title?.results?.id }}</h2>
+      </div> -->
     </div>
   </div>
 </div>

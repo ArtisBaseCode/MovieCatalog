@@ -7,26 +7,40 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class MovieServiceService {
-  private apiUrl = 'https://streaming-availability.p.rapidapi.com'; //Base URL
-  private headers = new HttpHeaders({
+  //Stream Availability Api
+
+  private apiStreamUrl = 'https://streaming-availability.p.rapidapi.com'; //Base URL
+  private streamAvailabilityHeaders = new HttpHeaders({
     'X-RapidAPI-Key': '119e3c1472msh5acbb06249f5c66p151450jsncc10d0765001',
     'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com',
   });
-  options = {
-    headers: this.headers,
+  optionsStreamApi = {
+    headers: this.streamAvailabilityHeaders,
   };
 
+  //Movie-Database api
+
+  private apiMovieDbUrl = 'https://moviesdatabase.p.rapidapi.com/titles';
+  private movieDbHeaders = new HttpHeaders({
+    'X-RapidAPI-Key': '119e3c1472msh5acbb06249f5c66p151450jsncc10d0765001',
+    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
+  });
+  optionsMovieDb = {
+    headers: this.movieDbHeaders,
+  };
+
+  //Rest of code
   constructor(private http: HttpClient) {}
 
   getTitles(): Observable<any> {
-    return this.http.get<any[]>(`${this.apiUrl}`, this.options);
+    return this.http.get<any[]>(`${this.apiMovieDbUrl}`, this.optionsMovieDb);
   }
 
   getGenres(): Observable<any> {
     const options = {
-      headers: this.headers,
+      headers: this.streamAvailabilityHeaders,
     };
 
-    return this.http.get<any>(`${this.apiUrl}/genres`, options);
+    return this.http.get<any>(`${this.apiStreamUrl}/genres`, options);
   }
 }
