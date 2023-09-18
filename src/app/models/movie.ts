@@ -1,7 +1,7 @@
 import { MovieCategory } from './category';
 
 export class Movie {
-  id?: number;
+  id?: string ;
   originalTitleText: string;
   primaryImage: string;
   releaseDate: string;

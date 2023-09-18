@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    children: [{ path: 'admin-pannel', component: AdminPannelComponent }],
+    children: [{ path: 'admin-pannel', component: AdminPannelComponent },
+  ],
   },
 
   { path: 'landing-page', component: LandingPageComponent },

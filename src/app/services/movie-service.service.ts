@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import axios from 'axios';
 import { Observable } from 'rxjs';
+import { Movie } from '../models/movie';
 
 @Injectable({
   providedIn: 'root',
@@ -11,8 +12,8 @@ export class MovieServiceService {
 
   private apiStreamUrl = 'https://streaming-availability.p.rapidapi.com'; //Base URL
   private streamAvailabilityHeaders = new HttpHeaders({
-    'X-RapidAPI-Key': '73754c0e3bmshb2dcc58e8201b46p18b4f1jsnd1c386709048',
-    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com',
+    'X-RapidAPI-Key': 'c15c8d2dc6msh5842125ef154db7p193824jsn0997cd7c3815',
+    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
   });
   optionsStreamApi = {
     headers: this.streamAvailabilityHeaders,
@@ -42,5 +43,9 @@ export class MovieServiceService {
     };
 
     return this.http.get<any>(`${this.apiStreamUrl}/genres`, options);
+  }
+
+  getMovieById(id: string | null): Observable<Movie>{
+    return this.http.get<any>(`${this.apiMovieDbUrl}/${id}`, this.optionsMovieDb)
   }
 }

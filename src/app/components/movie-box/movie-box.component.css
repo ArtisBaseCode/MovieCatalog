@@ -1,3 +1,7 @@
+*{
+  text-decoration: none;
+}
+
 .container {
   display: block;
   width: 300px;
@@ -24,6 +28,9 @@
   font-weight: 500;
   width: 100%;
   text-align: center;
+}
+.movie-title a{
+  color: #152537;
 }
 .movie-category {
   /* width: 70%; */

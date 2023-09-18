@@ -3,6 +3,7 @@ import { Movie } from 'src/app/models/movie';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 import { MovieCategory } from 'src/app/models/category';
 import { SelectedcategoryService } from 'src/app/services/selectedcategory.service';
+import { SearchService } from 'src/app/services/search.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -16,11 +17,13 @@ export class MovieListComponent implements OnInit {
   displayedMovies: Movie[] = [];
   categories: string[] = [];
   selectedCategory: string = 'All Movies';
+  searchText: string = '';
 
   // Constructor
   constructor(
     private movieService: MovieServiceService,
-    private categoryService: SelectedcategoryService
+    private categoryService: SelectedcategoryService,
+    private searchService: SearchService
   ) {}
 
   // On Init
@@ -31,6 +34,14 @@ export class MovieListComponent implements OnInit {
       this.filterMoviesByCategory(this.selectedCategory);
       console.log(this.selectedCategory);
     });
+
+    //Search Function
+    this.searchService.searchText$.subscribe((query) => {
+      this.searchText = query; 
+      this.filterMoviesBySearch(this.searchText);
+
+    })
+
     //
     //Getting All Categories and assignin it to Movie Titles
     this.movieService.getGenres().subscribe((data) => {
@@ -94,16 +105,15 @@ export class MovieListComponent implements OnInit {
         (movie) => movie.titleCategory?.name === category
       );
     }
+  }// filter movies by  category
+
+  filterMoviesBySearch(s: string): void{
+    if(!s || s=== ''){
+      this.displayedMovies = this.movies;
+    } else {
+      this.displayedMovies = this.movies.filter((movie) => movie.titleText.toLowerCase().includes(s.toLowerCase()))
+    }
   }
 
-  // Load Movies Function
-  loadMovies(): void {}
-
-  // loadMovies(): void {
-  //   // Fetch movies from the service and store them in this.allMovies
-  //   this.movieService.getMovies().subscribe((data) => {
-  //     this.allMovies = data; // Store the original list
-  //     this.filterMoviesByCategory(this.selectedCategory);
-  //   });
-  // }
+ 
 }

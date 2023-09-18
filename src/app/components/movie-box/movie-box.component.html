@@ -2,7 +2,7 @@
   <div class="img-container">
     <img src="{{ imgUrl }}" alt="Foto" class="movie-image" />
   </div>
-  <h3 class="movie-title">{{ title }}</h3>
+  <h3 class="movie-title"><a [routerLink]="['/movie', movieId] ">{{ title }}</a></h3>
 
   <div class="category-container">
     <div class="category-inner-container">
@@ -12,3 +12,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
