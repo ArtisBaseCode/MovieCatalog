@@ -11,7 +11,7 @@ export class MovieServiceService {
 
   private apiStreamUrl = 'https://streaming-availability.p.rapidapi.com'; //Base URL
   private streamAvailabilityHeaders = new HttpHeaders({
-    'X-RapidAPI-Key': '119e3c1472msh5acbb06249f5c66p151450jsncc10d0765001',
+    'X-RapidAPI-Key': '73754c0e3bmshb2dcc58e8201b46p18b4f1jsnd1c386709048',
     'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com',
   });
   optionsStreamApi = {

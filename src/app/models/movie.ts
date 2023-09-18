@@ -1,3 +1,5 @@
+import { MovieCategory } from './category';
+
 export class Movie {
   id?: number;
   originalTitleText: string;
@@ -5,7 +7,7 @@ export class Movie {
   releaseDate: string;
   releaseYear: string;
   titleText: string;
-  titleCategory?: string[];
+  titleCategory: MovieCategory;
 
   constructor() {
     this.originalTitleText = '';
@@ -13,6 +15,8 @@ export class Movie {
     this.releaseDate = '';
     this.releaseYear = '';
     this.titleText = '';
-    this.titleCategory = [];
+    this.titleCategory = {
+      name: '',
+    };
   }
 }

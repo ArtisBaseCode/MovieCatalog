@@ -5,7 +5,7 @@
   <!-- <h1>Leonamaemira</h1> -->
   <div class="movie-list-container">
     <div class="movie-list">
-      <div class="movie-box" *ngFor="let movie of movies">
+      <div class="movie-box" *ngFor="let movie of displayedMovies">
         <app-movie-box
           [categories]="movie.titleCategory"
           [title]="movie.titleText"

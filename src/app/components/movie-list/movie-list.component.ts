@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
+import { MovieCategory } from 'src/app/models/category';
+import { SelectedcategoryService } from 'src/app/services/selectedcategory.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -8,29 +10,100 @@ import { MovieServiceService } from 'src/app/services/movie-service.service';
   styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
+  // Declared Variables
   titles: any[] = [];
   movies: Movie[] = [];
-  constructor(private movieService: MovieServiceService) {}
+  displayedMovies: Movie[] = [];
+  categories: string[] = [];
+  selectedCategory: string = 'All Movies';
+
+  // Constructor
+  constructor(
+    private movieService: MovieServiceService,
+    private categoryService: SelectedcategoryService
+  ) {}
+
+  // On Init
   ngOnInit(): void {
-    this.movieService.getTitles().subscribe((data) => {
-      // console.log(data.results);
-      if (data.results) {
-        for (let mv of data.results) {
-          if (mv) {
-            // console.log(mv.titleText.text);
-            let movie = new Movie();
-            // movie.id = '';
-            movie.id = mv.id;
-            movie.originalTitleText = mv.originalTitleText;
-            movie.primaryImage = mv.primaryImage?.url;
-            movie.releaseDate = mv.releaseDate;
-            movie.releaseYear = mv.releaseYear.year;
-            movie.titleText = mv.titleText.text;
-            this.movies.push(movie);
-          }
-          console.log('If Statement', this.movies);
-        }
-      }
+    //Getting selected Category
+    this.categoryService.selectedCategory$.subscribe((category) => {
+      this.selectedCategory = category;
+      this.filterMoviesByCategory(this.selectedCategory);
+      console.log(this.selectedCategory);
     });
+    //
+    //Getting All Categories and assignin it to Movie Titles
+    this.movieService.getGenres().subscribe((data) => {
+      if (data.result) {
+        for (let ctId in data.result) {
+          // console.log('for loop: ', data.result[ctId]);
+          let ct = new MovieCategory();
+          ct.name = data.result[ctId];
+          this.categories.push(ct.name);
+        } //for
+        // console.log('OnInit  ', this.categories);
+      } //if
+      this.movieService.getTitles().subscribe((data) => {
+        // console.log(data.results);
+        if (data.results) {
+          for (let mv of data.results) {
+            if (mv) {
+              // console.log(mv.titleText.text);
+              let movie = new Movie();
+              // movie.id = '';
+              movie.id = mv.id;
+              movie.originalTitleText = mv.originalTitleText;
+              movie.primaryImage = mv.primaryImage?.url;
+              movie.releaseDate = mv.releaseDate;
+              movie.releaseYear = mv.releaseYear.year;
+              movie.titleText = mv.titleText.text;
+              //
+              //Giving movies random categories
+
+              let randomIndex = Math.floor(
+                Math.random() * this.categories.length
+              );
+              // console.log('Kategorite random', this.categories[randomIndex]);
+              movie.titleCategory.name = this.categories[randomIndex];
+              this.movies.push(movie);
+            } // if condition
+            //
+            //
+          } // for loop
+          console.log('If Statement', this.selectedCategory);
+
+          // movie.titleCategory?.name = this.categories[randomIndex];
+
+          //
+        } //if condition
+        //
+      }); // movie service
+    }); //movie service
+    //
+    //Getting Movie Titles
+
+    //
+  } //On Init
+
+  // Filter Movies Based on selected Category
+  filterMoviesByCategory(category: string): void {
+    if (category === 'All Movies') {
+      this.displayedMovies = this.movies;
+    } else {
+      this.displayedMovies = this.movies.filter(
+        (movie) => movie.titleCategory?.name === category
+      );
+    }
   }
+
+  // Load Movies Function
+  loadMovies(): void {}
+
+  // loadMovies(): void {
+  //   // Fetch movies from the service and store them in this.allMovies
+  //   this.movieService.getMovies().subscribe((data) => {
+  //     this.allMovies = data; // Store the original list
+  //     this.filterMoviesByCategory(this.selectedCategory);
+  //   });
+  // }
 }

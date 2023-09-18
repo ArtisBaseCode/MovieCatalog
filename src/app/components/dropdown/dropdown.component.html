@@ -1,8 +1,19 @@
 <div class="dropdown">
   <button class="dropbtn" (click)="onToggle()">{{ title }}</button>
   <div *ngIf="toggle" class="dropdown-content">
-    <button *ngFor="let category of categories" class="dropdown-content-item">
-      {{ category.name }}
+    <button
+      (click)="onSelectCategory('All Movies')"
+      class="dropdown-content-item"
+    >
+      Show All
     </button>
+    <div *ngFor="let category of categories">
+      <button
+        (click)="onSelectCategory(category.name)"
+        class="dropdown-content-item"
+      >
+        {{ category.name }}
+      </button>
+    </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 import { MovieCategory } from 'src/app/models/category';
+import { SelectedcategoryService } from 'src/app/services/selectedcategory.service';
 
 @Component({
   selector: 'app-dropdown',
@@ -11,11 +12,15 @@ export class DropdownComponent implements OnInit {
   categories: MovieCategory[];
   @Input() title: string | undefined;
   toggle: boolean = false;
+  @Output() selectedCategory: EventEmitter<string> = new EventEmitter();
 
   onToggle(): void {
     this.toggle = !this.toggle;
   }
-  constructor(private movieService: MovieServiceService) {
+  constructor(
+    private movieService: MovieServiceService,
+    private selectCategoryService: SelectedcategoryService
+  ) {
     this.categories = [];
   }
 
@@ -31,5 +36,10 @@ export class DropdownComponent implements OnInit {
         // console.log('OnInit  ', this.categories);
       }
     });
+  }
+
+  onSelectCategory(v: string): void {
+    console.log(v);
+    this.selectCategoryService.setSelectedCategory(v);
   }
 }

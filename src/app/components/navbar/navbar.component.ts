@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,4 +11,6 @@ export class NavbarComponent {
   onLogIn() {
     this.router.navigate(['home']);
   }
+
+  onSelectedCategory(v: string) {}
 }

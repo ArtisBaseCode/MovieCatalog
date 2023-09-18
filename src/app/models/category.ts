@@ -1,7 +1,7 @@
 export class MovieCategory {
   name: string = '';
 
-  contructor() {
+  constructor() {
     this.name = '';
   }
 }

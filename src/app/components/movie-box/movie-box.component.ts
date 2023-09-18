@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MovieCategory } from 'src/app/models/category';
 
 @Component({
   selector: 'app-movie-box',
@@ -7,6 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class MovieBoxComponent {
   @Input() title: string | undefined;
-  @Input() categories: string[] | undefined;
+  @Input() categories: MovieCategory | undefined;
   @Input() imgUrl: string | undefined;
 }
