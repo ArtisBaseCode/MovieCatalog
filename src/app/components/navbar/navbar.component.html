@@ -4,14 +4,14 @@
   </div>
   <div class="right-menu">
     <div class="right-menu-item">
-      <app-search-bar></app-search-bar>
+      <app-search-bar *ngIf="searchBar"></app-search-bar>
     </div>
     <div class="right-menu-item">
       <app-dropdown title="Categories"></app-dropdown>
     </div>
-    <div class="right-menu-item">
+    <!-- <div class="right-menu-item">
       <button (click)="onLogIn()">Log In</button>
-    </div>
+    </div> -->
   </div>
 </div>
 <router-outlet></router-outlet>

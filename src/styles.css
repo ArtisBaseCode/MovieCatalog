@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Inclusive Sans', sans-serif;
+  /* font-family: sans-serif; */
 }
 body {
   background-color: #e8e5db;

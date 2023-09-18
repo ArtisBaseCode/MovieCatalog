@@ -45,7 +45,7 @@ export class MovieServiceService {
     return this.http.get<any>(`${this.apiStreamUrl}/genres`, options);
   }
 
-  getMovieById(id: string | null): Observable<Movie>{
+  getMovieById(id: string | null): Observable<any>{
     return this.http.get<any>(`${this.apiMovieDbUrl}/${id}`, this.optionsMovieDb)
   }
 }
